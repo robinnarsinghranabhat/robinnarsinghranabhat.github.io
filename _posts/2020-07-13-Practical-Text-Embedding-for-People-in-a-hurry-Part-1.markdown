@@ -49,7 +49,7 @@ The training architecture is , (s_(i-1) , s_i , s_(i+1)  ) , the encoder takes i
 
 
 
-along with it's modifications variants
+<!-- along with it's modifications variants
 
 
 
@@ -71,7 +71,7 @@ along with it's modifications variants
 
 ## Use simple text classification dataset, and check how
 ## nearest neighbour on classification performs with these unsupervised approaches. i.e without training
-
+ -->
 
 
 
