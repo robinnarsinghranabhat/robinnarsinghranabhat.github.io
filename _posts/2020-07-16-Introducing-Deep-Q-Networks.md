@@ -1,6 +1,6 @@
 ---
 title:  "Brief Intro to Reinforcement with Deep learning"
-date:   2020-07-13 23:35:38 +0545
+date:   2020-07-15 23:35:38 +0545
 classes : wide
 categories:
   - Reinforcement-Learning
