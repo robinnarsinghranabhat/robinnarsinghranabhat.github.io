@@ -31,8 +31,8 @@ url                      :  "whatsGr8t.github.io" # the base hostname & protocol
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "whatsGr8t/whatsGr8t.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/robin.jpg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "Geneneralize Intelligence"# overrides the website title displayed in the masthead, use " " for no title
+# logo                     : "/assets/images/robin.jpg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : "Generalize Intelligence"# overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -100,29 +100,29 @@ analytics:
 # Site Author
 author:
   name             : "Robin Narsingh"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/robin.jpg"
   bio              : "I like to think of intuitive explanation of everything I find intereseting. Well, not quantum mechanies . of course"
   location         : "Planet X"
   email            : "robinnarsingha123@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:robinnarsingha123@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      # url: "https://whatsGr8t.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://twitter.com/robinalways1"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      # url: "https://facebook.com/robin.ranabhat"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/whatsGr8t"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      # url: "https://instagram.com/robinAkan"
 
 # Site Footer
 footer:
@@ -294,6 +294,3 @@ defaults:
       layout: single
       author_profile: true
       path: "./assets/images/robin.jpg"
-
-
-
