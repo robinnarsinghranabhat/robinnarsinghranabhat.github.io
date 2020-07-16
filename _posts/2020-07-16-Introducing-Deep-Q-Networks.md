@@ -3,7 +3,7 @@ title:  "Brief Intro to Reinforcement with Deep learning"
 date:   2020-07-13 23:35:38 +0545
 classes : wide
 categories:
-  - Text-Embedding
+  - Reinforcement-Learning
 excerpt: A guide to use Deep neural nets to train a lunar lander bot based on visual information
 
 header:
@@ -14,4 +14,4 @@ header:
 
 ## What is DQN ??
 
-It's simple a variation of regular   Q-learning algorithm to continuous state and action spaces. 
+It's simple a variation of regular   Q-learning algorithm to continuous state and action spaces.
