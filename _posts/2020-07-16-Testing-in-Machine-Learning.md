@@ -25,6 +25,7 @@ header:
 Demo :
 
 ```python
+
 ## In this sample code, we see a basic testing
 ## We test our function ***capitalize_reverse***
 ## The function is supposed to capitalize text and reverse it, while ignoring numbers
@@ -42,19 +43,15 @@ def test_capitalize_reserse( ):
     assert capitalize_reverse('age') == 'EGA'
     assert capitalize_reverse('1243') == '3421'
 
-```python
+```
 
 We get following output of successful testing :
 
 ![](assets/images/test_1.png){:.align-center}  
 
 
-## Why not test ?
-
-> Time taking
-
 ## How to assert code is actually correct ?
 
-> Manual sanity checks in head ( Try ways to break the code)
-> Defensive Programming ( Tons of if else , exception handling , assertions )
-> tests
+- Manual sanity checks in head ( Try ways to break the code)
+- Defensive Programming ( Tons of if else , exception handling , assertions )
+- tests
