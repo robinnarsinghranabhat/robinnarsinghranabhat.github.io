@@ -17,11 +17,11 @@ Few years past with introduction of word vectors, NLP research has again rapidly
 
 We will look into series of notable papers and compare their performance in SentEval task to calculate sentence similarity.
 
-### Wait .. Why need unsupervised embeddings ?
+### Wait .. Why need Unsupervised Embeddings ?
 
 Apart from lack of supervised data-set for most of real world problems,  contextual embedding of text is one decent leap towards make computer close to humans in language Understanding. But don't worry, we are nowhere there yet. The ideas discussed below may be state of the art , but just good in a restricted settings.
 
-In my own experience as ML Practitioner, when working on real life problems related to Natural Language Understanding like, Question Answering with FAQ, Fact checking systems e.t.c,  chief problem is lack of supervised dataset. Say a Garage company approaches to you and tells, they need automation of emails through FAQs they have prepared to generic queries. Before that, a human had to manually search the FAQ and reply to clients mail.
+In my own experience as ML Practitioner, when working on real life problems related to Natural Language Understanding like, Question Answering with FAQ, Fact checking systems e.t.c, chief problem is lack of supervised dataset. Say a Garage company approaches to you and tells, they need automation of emails through FAQs they have prepared to generic queries. Before that, a human had to manually search the FAQ and reply to clients mail.
 
 
 We will discuss the following sentence embedding techniques and their performance in senteval task.

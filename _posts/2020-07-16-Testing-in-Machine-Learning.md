@@ -12,15 +12,22 @@ header:
   teaser: /assets/images/sentence_embedding_image.jpg
 ---
 
-
  In case of Data science, unit testing should more of the part of project, not goal of project. At the end of the day, Client care about delivery of predictions, patterns and forecasts. And unit tests assist to  ensure that the forecasts are at least not insensible.
 
 
 ## Why test ?
 
-> Is code working as expected ( confidence that results are indeed correct)
-> Make experimental changes rapidly without fearing to break the code
-> Other people more confident in our code
+- Is code working as expected ( confidence that results are indeed correct)
+- Make experimental changes rapidly without fearing to break the code
+- Other people more confident in our code
+
+-Helps catch bugs
+-Understand the code for new users
+-Help code development and refactoring
+
+- Code works not just in one computer, but across all the other users computer
+
+```
 
 Demo :
 
@@ -35,11 +42,11 @@ Demo :
 def capitalize_reverse(text):
     return text[::-1].upper()
 
-def test_capitalize_reserse( ):
+def test_capitalize_reserse():
   assert capitalize_reverse('age') == 'EGA'
   assert capitalize_reverse('1243') == '3421'
 
-def test_capitalize_reserse( ):
+def test_capitalize_reserse():
     assert capitalize_reverse('age') == 'EGA'
     assert capitalize_reverse('1243') == '3421'
 
@@ -47,11 +54,36 @@ def test_capitalize_reserse( ):
 
 We get following output of successful testing :
 
-![](assets/images/test_1.png){:.align-center}  
+![](/assets/images/test_1.png){:.align-center}  
 
 
+<<<<<<< Updated upstream
+=======
+## Why not test ?
+
+- Time taking
+
+## How many testing variants to add ?  
+
+Imagine when they mass produced the first car (your first piece of code that works). How much crashes did it take to perfect the car design ? after one crash, they decided to use bumper, and after another, they decided to put air bag and so on .. Similarly, as code keeps breaking ( someone uses string in addition function ), we continously modify code and add new tests along the way.
+
+
+>>>>>>> Stashed changes
 ## How to assert code is actually correct ?
 
 - Manual sanity checks in head ( Try ways to break the code)
 - Defensive Programming ( Tons of if else , exception handling , assertions )
+<<<<<<< Updated upstream
 - tests
+=======
+- Tests
+
+
+
+## Pytest Basics
+
+
+## Fixtures to prevent rerunning time straining pieces of code .. loading a function
+
+## Mocks .. Creating a fake response .. 
+>>>>>>> Stashed changes
