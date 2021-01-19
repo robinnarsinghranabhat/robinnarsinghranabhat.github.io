@@ -16,6 +16,10 @@ header:
 ### THE SLIDES FOR THIS POST ARE
 https://www.davidsilver.uk/wp-content/uploads/2020/03/pg.pdf
 
+### Lecture Notes of this post
+http://web.stanford.edu/class/cs234/CS234Win2019/slides/lnotes8.pdf
+
+
 Previously in DQN, Network converted state (vector data, pixels , frame...) into state value. ( We approximated value / action value based on theta of neural net)
 We trained the network on which action to choose from among different action-values.
  For early exploration, when network weights are random, we used epsilon greedy. As for evaluation, we used argmax of action. As for
@@ -40,12 +44,9 @@ But, represent fact that, if ball is here, take this action is just easier.
 - Better Convergence properties .. , Value based often oscillate , dramatic swings
 - Good for high dimensinal / Contionoues action spaces
 - Learn stochastic policies .. Since network is trained to take series of actions over an trajectory ( an episode, some thousand time steps .. how you define it ),
-  it may take multiple trajectories .. since, choosing action is based on probability distribution of actions.
-
-
-
+  it may take multiple trajectories .. since, choos- Value function
+ing action is based on probability distribution of actions.
 - Scale to large complicated MDP's. Even with DQN, assigining values to states is a complicated job, for real world problems.
-- Value function
 
 
 ## Policy Gradient when action space is discrete ,
@@ -61,73 +62,35 @@ Note, since output is sampled based on probability of different actions, taking 
 ## Policy Gradient when action space is high dimensional .. Well well well
 
 
+( DESCRIBING SLIDE FOR SCISSOR PAPER ROCK) SLIDE -> 6
+
+Why stochastic policy ?? Why not deterministic policy to maximize the reward through a path ??
+
+Conside **Scissor , Papers , Rock** . Here, deterministic strategy is easily exploited. Optimal policy is to play uniform random. Inspired by Nash Equilibrium from Game Theory.
 
 
+#### IN The SLIDE 7 , 8 , 9 , WE discuss STATE ALIASING  ( Multiple states with same features )
+## ( STATE ALIASING : Multiple states in an MDP, whose feature is same i.e Gray regions in Fugure of slide 7 ) ###
+
+(DESCRIBING ALIASED GRID WORLD, with VALUE METHOD ) SLIDE 7 -> Value function will assign same values to those Gray regions.
+So, That mean, With DQN algorithms, that assign same values to those state-action pair in Gray regions, it's clear that, we will choose *deterministic action with high probability as epsilon is low and during testing of algorithm, som implementation dont use epsilon. It's used in start only for exploration.*
+
+So, From figure, agent will get stuck oscillating , is in figure, until by virtue of epsilon, get out of it after a long time.
+
+(DESCRIBING ALIASED GRID WORLD, with VALUE METHOD)  SLIDE 8
+
+Now, Since probability is not deterministic, agent has 50-50 percent change of going E or W from first gray region.
+Simliar is the case for second gray region as well.
+
+       PI( state_feature = ( Wall at N and S  ) , action = Move E ) = 0.5
+       PI( state_feature = ( Wall at N and S  ) , action = Move W ) = 0.5
+
+In deep RL : PI represents the neural network whose input is state_feature : and discrete action is defined as softmax output. ( How about continous action space , contionus high dimensional action spaces .. We will go there . . Just wait )
 
 
+### CONCLUSION STATE ALIASING ###########
+#########################################
 
+### STARTING : POLICY OBJECTIVE FUNCTION .. How do we optimize it really ?
 
-## Why test ?
-
-- Is code working as expected ( confidence that results are indeed correct)
-- Make experimental changes rapidly without fearing to break the code
-- Other people more confident in our code
-
--Helps catch bugs
--Understand the code for new users
--Help code development and refactoring
-
-- Code works not just in one computer, but across all the other users computer
-
-```
-
-Demo :
-
-```python
-## In this sample code, we see a basic testing
-## We test our function ***capitalize_reverse***
-## The function is supposed to capitalize text and reverse it, while ignoring numbers
-
-## We make a separate file test_demo.py and run the code below as : **pytest test_demo.py**
-
-def capitalize_reverse(text):
-    return text[::-1].upper()
-
-def test_capitalize_reserse():
-  assert capitalize_reverse('age') == 'EGA'
-  assert capitalize_reverse('1243') == '3421'
-
-def test_capitalize_reserse():
-    assert capitalize_reverse('age') == 'EGA'
-    assert capitalize_reverse('1243') == '3421'
-
-```
-
-We get following output of successful testing :
-
-![](/assets/images/test_1.png){:.align-center}
-
-
-## Why not test ?
-
-- Time taking
-
-## How many testing variants to add ?
-
-Imagine when they mass produced the first car (your first piece of code that works). How much crashes did it take to perfect the car design ? after one crash, they decided to use bumper, and after another, they decided to put air bag and so on .. Similarly, as code keeps breaking ( someone uses string in addition function ), we continously modify code and add new tests along the way.
-
-
-## How to assert code is actually correct ?
-
-- Manual sanity checks in head ( Try ways to break the code)
-- Defensive Programming ( Tons of if else , exception handling , assertions )
-- Tests
-
-
-
-## Pytest Basics
-
-
-## Fixtures to prevent rerunning time straining pieces of code .. loading a function
-
-## Mocks .. Creating a fake response ..
+DESCRIBING SLIDE 9 --- Policy Optimization functions

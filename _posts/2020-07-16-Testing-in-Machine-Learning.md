@@ -5,85 +5,105 @@ classes : wide
 categories:
   - Data-Science
   - Testing
-excerpt: A discussion on usefulness of unit testing in data science projects
+excerpt: Compilation of necessary  discussion on usefulness of unit testing in data science projects
 
 header:
   og_image: /assets/images/sentence_embedding_image.jpg
   teaser: /assets/images/sentence_embedding_image.jpg
 ---
 
- In case of Data science, unit testing should more of the part of project, not goal of project. At the end of the day, Client care about delivery of predictions, patterns and forecasts. And unit tests assist to  ensure that the forecasts are at least not insensible.
+Testing is not a data scientist's best practice in software engineering. Because of constant experimentation, adding test would seem like an unnecessary overhead.
+
 
 
 ## Why test ?
 
-- Is code working as expected ( confidence that results are indeed correct)
+
+When your Machine learning code is in production, with all intermediate pipelines,  
+
+- incoming messy data from server (raw text of customer review) , 
+- preprocessing/ feature extraction,  
+- stochastic algorithm
+
+we generally make lot of assumptions on how data is like, and how it's being processed. Well, that's just assumptions. What if irrelevant values, columns were added in data warehouse, which is not common. System would break. 
+
+Test helps to make sure, where it broke.
+
+Key reason to tests : 
+
+- Is code working as expected ( confidence that results are indeed correct ) , like adding assertions in code to check duplicated data, missing values where it's not supposed to . 
+  Minimal test you can add is : assertions
 - Make experimental changes rapidly without fearing to break the code
 - Other people more confident in our code
-
 -Helps catch bugs
 -Understand the code for new users
 -Help code development and refactoring
-
+- less amazed at, like, don't get suprised when code breaks due to faulty production data in pipeline
 - Code works not just in one computer, but across all the other users computer
+- Show em data scientists can actually write good code !!
 
-```
 
-Demo :
+
+## When and what to test ?
+
+It's an iterative process. You write code, you add test to make sure code does what you meant it to do. You make new changes, you add test.
+
+Say a function that calculates mean, you write a test, and check it actually calculates mean. 
+
+You test the answer is corrent. not internal computation.
+Example, your code calculates mean :
 
 ```python
+## simple example.py
+def weighted_mean( array , weights ) :
+  assert array.istype(np.array)
+  assert weights.istype(np.array)
+  return  np.sum(array * weights) / len(array)
 
-## In this sample code, we see a basic testing
-## We test our function ***capitalize_reverse***
-## The function is supposed to capitalize text and reverse it, while ignoring numbers
-
-## We make a separate file test_demo.py and run the code below as : **pytest test_demo.py**
-
-def capitalize_reverse(text):
-    return text[::-1].upper()
-
-def test_capitalize_reserse():
-  assert capitalize_reverse('age') == 'EGA'
-  assert capitalize_reverse('1243') == '3421'
-
-def test_capitalize_reserse():
-    assert capitalize_reverse('age') == 'EGA'
-    assert capitalize_reverse('1243') == '3421'
+## test_mean.py
+def test_weighted_array( ):
+  assert(weighted_mean( [1,2,3,4,5] , [0.5,0.5,0.5,0.5,0.5] )) == 3
 
 ```
+
+
+
+TOOL OF CHOICE : pytest !!
+
+Wait no unit tests .. Umm no, as much as headache testing already is, I won't want
+to add more boilerplates, which unit tests does.
+
+
+
+### General Example : 
+
+Assume the folder structure : 
+
+![](2021-01-19-23-45-43.png)
+
+```python
+## In capitalize.py, we have  function `capitalize_reverse`
+## The function is supposed to capitalize text and reverse it, while ignoring numbers
+def capitalize_reverse(text):
+    return text[::-1].upper()
+```
+
+We make a separate file *test_deme.py* and write test for above function 
+
+```python
+## test our reverse function
+def test_capitalize_reverse():
+  assert capitalize_reverse('age') == 'EGA'
+  assert capitalize_reverse('1243') == '3421'
+```
+
+In the shell, run the test as : **pytest test_demo.py**.
 
 We get following output of successful testing :
 
-![](/assets/images/test_1.png){:.align-center}  
+![](/assets/images/testing_machine_learning/2021-01-19-23-45-43.png)
 
 
-<<<<<<< Updated upstream
-=======
-## Why not test ?
-
-- Time taking
-
-## How many testing variants to add ?  
-
-Imagine when they mass produced the first car (your first piece of code that works). How much crashes did it take to perfect the car design ? after one crash, they decided to use bumper, and after another, they decided to put air bag and so on .. Similarly, as code keeps breaking ( someone uses string in addition function ), we continously modify code and add new tests along the way.
+### More Data Science Specific Tests
 
 
->>>>>>> Stashed changes
-## How to assert code is actually correct ?
-
-- Manual sanity checks in head ( Try ways to break the code)
-- Defensive Programming ( Tons of if else , exception handling , assertions )
-<<<<<<< Updated upstream
-- tests
-=======
-- Tests
-
-
-
-## Pytest Basics
-
-
-## Fixtures to prevent rerunning time straining pieces of code .. loading a function
-
-## Mocks .. Creating a fake response .. 
->>>>>>> Stashed changes
