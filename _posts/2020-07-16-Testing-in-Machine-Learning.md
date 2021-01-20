@@ -13,11 +13,19 @@ header:
   teaser: /assets/images/sentence_embedding_image.jpg
 ---
 
-Testing is not a data scientist's best practice in software engineering. Because of constant experimentation with models, adding test would seem like an unnecessary overhead.
+## Part 1 : General overview on testing
+
+Testing is not a data scientist's best practice in software engineering. With constant experimentation as day to day job, especially on feature engineering, data scientits don't have a firm ground to begin with, where to test
+
+On a day to day job as a data scientists, we generally have : 
+
+- One off analysis ( some experimentation to data in jupyter notebook, which we generally document , for easier recall later on )
+- Exploratory work ( Generally impossible to follow testing, but, there's always some importatn piece of code written during this phase that will be reused )
+- Well-defined problem ( this is where testing shines ) 
+- Working with Legacy code ( When using legacy codebase , try adding test to parts you have reused/modified from it and not whole codebase )
 
 
-
-## Why test ?
+### Why test ?
 
 With complicated production code involving feature extraction on  messy user input ,  and stochastic algorithm acting upon it, We make lot of assumptions on how data is like, and how it's being processed. Well, that's just assumptions. 
 
@@ -27,7 +35,7 @@ Test helps to make sure, where it broke.
 
 Key reason can be listed as : 
 
-- Is code doing what's is supposed to do ( are missing values in data affecting the preprocessing , is model output too improbable e.t.c )
+- Know code is during whats it's supposed to do ( are missing values in data affecting the preprocessing which we forget to account for )
 - Make experimental changes rapidly without fearing to break the code
 - Other people more confident in our code
 - Helps catch bugs
@@ -39,7 +47,7 @@ Key reason can be listed as :
 
 
 
-## When and what to test ?
+### When and what to test ?
 
 It's an iterative process. You write code, you add test to make sure code does what you meant it to do. You make new changes, you add test.
 
@@ -64,7 +72,7 @@ def test_weighted_array( ):
 
 
 
-## TOOL OF CHOICE : pytest
+### Testing tool of choice : pytest
 
 You can install it using any of  :
 ```
@@ -77,7 +85,7 @@ to add more boilerplates, which unit tests does.
 
 Now into the example 
 
-### Example 1 : 
+#### General Testing Scenario : 
 
 Assume the folder structure : 
 
@@ -143,8 +151,17 @@ Testing this again, `pytest test_demo.py`. we pass the test.
 
 Well that was simple and not data science specific. But this tutorial was only meant to make you guys understand, what test driven development ( TDD ) actually is. 
 
-Now TDD is not widly practiced in Data science, for it's own reasons. There's always someone pointing out, it slows down my experimentation. And that's true. 
 
-Best practice is to, experiment in notebook and when a stable ground is reached and code is being transferred to production, you must start writing tests.
+## Part 2 :  Data science specific Testing
+In Data Science domain , testing usually revolves around : 
+
+- Dataframes
+- Databases
+- ML models with non-deterministic outcomes
+- Acceptable tolerances on results
+- Testing for properties, than exact values
+
+#### CONTINE AT : jes ford, 13:07
+
 
 
