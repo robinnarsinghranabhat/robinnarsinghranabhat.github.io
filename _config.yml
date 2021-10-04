@@ -295,3 +295,5 @@ defaults:
       layout: single
       author_profile: true
       path: "./assets/images/robin.jpg"
+
+theme: jekyll-theme-cayman
