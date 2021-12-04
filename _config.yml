@@ -293,4 +293,4 @@ defaults:
       author_profile: true
       path: "./assets/images/robin.jpg"
 
-theme: jekyll-theme-slate
+theme: jekyll-theme-midnight
