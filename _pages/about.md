@@ -6,7 +6,7 @@ excerpt: Learn about me, my current endeavors, research interest areas and the m
 ---
 
 **Who I am**  
-It doesn't matter much. What matters is what I do. [wide and deep](https://github.com/whatsGr8t) on the world to visualize maths.
+It doesn't matter much. What matters is what I do. [wide and deep](https://github.com/robinnarsinghranabhat) on the world to visualize maths.
 
 **What I do**  
 I apply Machine Learning research to industry problems at [Fusemachines](https://fusemachines.com) . I've worked in domains of education, health-care, logistics and market research.
