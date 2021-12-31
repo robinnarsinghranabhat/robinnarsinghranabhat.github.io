@@ -1,12 +1,11 @@
 ---
 permalink: /about/
-title: "About"
+title: "self"
 classes: wide
 excerpt: Learn about me, my current endeavors, research interest areas and the motive behind this personal blog.
 ---
 
 
-**About me**  
 During the day, I apply machine Learning research to industry problems at [Fusemachines](https://fusemachines.com). At the night, I am batman .. Wish it were that exciting. I usually like to take a walk, listen to podcasts, ruminate on stuffs. Literally I can be wasting whole week watching 5 mins explanation of how exactly a electricity flows, and sometimes things are more concrete like writing code to visualize interseting algorithms.
 Basically, I like thinking.
 
