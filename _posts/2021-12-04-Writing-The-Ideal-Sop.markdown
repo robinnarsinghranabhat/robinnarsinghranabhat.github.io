@@ -11,7 +11,7 @@ header:
   teaser: /assets/images/sentence_embedding_image.jpg
 ---
 
-As as machine learning engineer trying applying for Graduate school, I decided to curate my most important findings and save tons of time for anyone. That' my contribution to delaying the heat death of the universe.
+Some personal notes for my future self. This document is to be iteratevily updated.
 
 ### What MIT [EECS Depertment](https://www.eecs.mit.edu/academics/graduate-programs/) Professors Look for in an ideal Statement of Purpose Letter for a PhD programme ?
 
