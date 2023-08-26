@@ -192,7 +192,5 @@ In Data Science domain , testing usually revolves around :
 - Models with non-deterministic outcomes
 - Checking the Data itself. For machine learning, we replace conditional logics with matrix multiplication happening inside a trained Model weights. These weights depend on Data itself. Hence, Data is the new code. Don't worry, it's really easy.
 
-#### CONTINE AT : jes ford, 13:07
-
 
 
