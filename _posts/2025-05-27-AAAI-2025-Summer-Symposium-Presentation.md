@@ -11,9 +11,8 @@ header:
   teaser: /assets/images/sentence_embedding_image.jpg
 ---
 
-## AAAI Summer Symposium 2025 Presentation Slides
-
-<object data="../assets/images/AAAI-Presentation.pdf" width="1000" height="1000" type='application/pdf'></object>
-
+<object data="/assets/images/AAAI-Presentation.pdf" width="1000" height="1000" type='application/pdf'>
+<p>IF you can't view PDF, click [Here](https://github.com/robinnarsinghranabhat/robinnarsinghranabhat.github.io/blob/gh-pages/assets/images/AAAI-Presentation.pdf)</p>
+</object>
 
 
